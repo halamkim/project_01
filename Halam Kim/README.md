@@ -23,6 +23,7 @@ import hvplot.pandas
 - In order to find the order of conservative to risky pairs, you calculate standard deviation and variance by first finding the daily returns (**pct_change()**) and then using the **std()** and **var()** methods. 
 
 
+
 ## Authors
 - Mike Blanchette
 - Soheil Gityforoze
