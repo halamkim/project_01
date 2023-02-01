@@ -20,7 +20,7 @@ from sklearn.linear_model import LinearRegression
 
 ## 1. Currency Pair Analysis
 - Concatenate each data using **pd.concat()** for all the closing prices
-![This shows the first 10 rows of the concatenated dataframe of all currency pairs' closing prices](https://raw.githubusercontent.com/halamkim/project_01/main/Screenshot%202023-01-31%20231837.png)
+![This shows the first 10 rows of the concatenated dataframe of all currency pairs' closing prices](https://raw.githubusercontent.com/halamkim/project_01/7d414de71125870bb1ccfc9171c90ab3e9cd9fb3/Halam%20Kim/Screen%20Shot%202023-01-27%20at%207.31.04%20PM.png)
 - In order to find the order of conservative to risky pairs, you calculate standard deviation and variance by first finding the percent change (**pct_change()**) and then using the **std()** and **var()** methods. 
 ```
 pct_change = df.pct_change().dropna()
@@ -40,7 +40,7 @@ slow_sma = 100
 4. Add a 'long/short' column that shows when to buy or sell the currency pair. This point is where the fast and slow SMA lines cross.
 5. Plot cumulative returns! 
 
-![Graph of all currency pairs' cumulative returns](https://raw.githubusercontent.com/halamkim/project_01/Halam-Kim/Screen%20Shot%202023-01-30%20at%208.47.36%20PM.png)
+![Graph of all currency pairs' cumulative returns](https://raw.githubusercontent.com/halamkim/project_01/main/Screenshot%202023-01-31%20231837.png)
 
 ## 3. Forecasting with Linear Regression
 
