@@ -1,6 +1,6 @@
-# Currency Pair Portfolio Strategy
+# FOREX SMA strategy and analysis
 
-This project uses two different methods to optimize the currency pair portfolio. One method is using the Simple Moving Average (SMA) strategy to trade whenever the slow SMA crosses the fast SMA to maximize the returns, with the purpose of determining possible returns for each pair and contrasting them with the general market (S&P 500) as a reference point.Additionally, we find the correlation between bond interest rate and the past currency pair prices to apply the correlation into our portfolio. We will examine the top 7 currency pairs: AUD/USD, EUR/CHF, EUR/JPY, EUR/USD, USD/CAD, USD/CHF, USD/JPY.
+This project uses the SMA (Small Moving Average) trading method to optimize the currency pair portfolio. This method is designed to trade whenever the slow SMA crosses the fast SMA to maximize the returns. The purpose is to determine possible returns for each pair and compare them with the general market (S&P 500) and a general index fund (Vanguard Index Fund) as a reference point. Additionally, we find the correlation between bond interest rate and the past currency pair prices to find the pattern and have it be a factor in our portfolio managing. We will examine the top 7 currency pairs: AUD/USD, EUR/CHF, EUR/JPY, EUR/USD, USD/CAD, USD/CHF, USD/JPY.
 
 ## Requirements
 - python 3.7 or higher
@@ -8,14 +8,11 @@ This project uses two different methods to optimize the currency pair portfolio.
 ```
 import pandas as pd
 from pathlib import Path
-from dotenv import load_dotenv
-import alpaca_trade_api as tradeapi
-import os
-import requests
 import numpy as np
 %matplotlib inline
 import hvplot.pandas
 from sklearn.linear_model import LinearRegression
+import yfinance as yf
 ```
 
 ## 1. Currency Pair Analysis
@@ -89,3 +86,21 @@ We will then plot the USD-based currency pairs (AUD/USD, USD/CAD, USD/CHF, USD/J
 Similarly, the EUR-based currency pairs will be plotted against the respective 10-year bond rates, and we will also analyze the EUR/USD pair with both 10-year bonds. The results of this analysis will provide insights into the correlation between interest rates and currency prices.
 
 It is important to note that while the visual analysis may suggest a correlation, there are multiple variables affecting currency prices, and a detailed correlation analysis between 10-year bond and currency pair prices would be useful for price-action forecasting.
+
+## 5. Performance Analysis
+The data was obtained using the *yfinance* for the S&P 500 and and the VBTLX (Vanguard Index Fund) and manual upload for the EURJPY currency pair. The cumulative returns were calculated and plotted to visualize the performance over the 10-year period.
+
+**Coding Order**
+1. Retrieve the daily close prices of S&P 500 and VBTLX from 2010 to 2020 from yfinance.
+2. Calculate the daily return of each index, drop the first row as it contains `NaN`, and add it to a new column named `strat_return`.
+3. Calculate the cumulative return of each security by multiplying the cumulative value of the `strat_return` column.
+4. Convert the date-time index of each data frame to date format.
+5. Plot the cumulative return of each asset class and label them accordingly.
+6. Create a plot displaying cumulative annual returns of the EURJPY to visually compare the performance with the \cf2 S&P 500 and VBTLX.
+
+**Results**
+
+The plots below show the cumulative return of each asset class from 2010 to 2020. We can see that the S&P 500 has performed relatively better than the other 2 asset classes. In contrast, the EURJPY has performed relatively better than the VBTLX. In simple terms, for every one dollar invested in S&P 500 in 2010, the investors could have expected to receive more than three dollars in return which is higher than the return if invested in the other two assets classes.
+
+![This plot shows the cumulative return of the S&P 500 (red line) and VBTLX (blue line) from 2010 to 2020.](https://raw.githubusercontent.com/halamkim/project_01/main/Cumulative%20Return%20of%20SP500%20and%20VBTLX.png)
+![This plot shows the cumulative return of the EURJPY from 2010 to 2020.](https://raw.githubusercontent.com/halamkim/project_01/main/Annual%20Return%20of%20EURJPY.png)
