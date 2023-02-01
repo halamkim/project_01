@@ -30,8 +30,8 @@ var = pct_change.var()
 Our trading strategy is to trade when the fast SMA graph crosses the slow SMA graph to target the best opportunities to maximize the returns.
 We used:
 ```
-fast_sma = 7
-slow_sma = 21
+fast_sma = 10
+slow_sma = 20
 ```
 1. Using the rolling + mean() methods, create two new columns called "fast_sma" and "slow_sma."
 2. Apply pct_change()
