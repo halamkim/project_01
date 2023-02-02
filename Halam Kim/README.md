@@ -13,6 +13,7 @@ import numpy as np
 import hvplot.pandas
 from sklearn.linear_model import LinearRegression
 import yfinance as yf
+import os
 ```
 
 ## 1. Currency Pair Analysis
