@@ -38,7 +38,7 @@ slow_sma = 100
 4. Add a 'long/short' column that shows when to buy or sell the currency pair. This point is where the fast and slow SMA lines cross.
 5. Plot cumulative returns! 
 
-![Graph of all currency pairs' cumulative returns](https://raw.githubusercontent.com/halamkim/project_01/main/Screenshot%202023-01-31%20231837.png)
+![Graph of all currency pairs' cumulative returns](https://raw.githubusercontent.com/halamkim/project_01/main/Mike%20Blanchette/sma%20screenshot.png)
 
 ## 3. Forecasting with Linear Regression
 
@@ -103,5 +103,5 @@ The data was obtained using the *yfinance* for the S&P 500 and and the VBTLX (Va
 
 The plots below show the cumulative return of each asset class from 2010 to 2020. We can see that the S&P 500 has performed relatively better than the other 2 asset classes. In contrast, the EURJPY has performed relatively better than the VBTLX. In simple terms, for every one dollar invested in S&P 500 in 2010, the investors could have expected to receive more than three dollars in return which is higher than the return if invested in the other two assets classes.
 
-![This plot shows the cumulative return of the S&P 500 (red line) and VBTLX (blue line) from 2010 to 2020.](https://raw.githubusercontent.com/halamkim/project_01/main/Cumulative%20Return%20of%20SP500%20and%20VBTLX.png)
-![This plot shows the cumulative return of the EURJPY from 2010 to 2020.](https://raw.githubusercontent.com/halamkim/project_01/main/Annual%20Return%20of%20EURJPY.png)
+![This plot shows the cumulative return of the S&P 500 (red line) and VBTLX (blue line) from 2010 to 2020.](https://raw.githubusercontent.com/halamkim/project_01/main/SoheilDocs/IndexPlot.png)
+![This plot shows the cumulative return of the EURJPY from 2010 to 2020.](https://raw.githubusercontent.com/halamkim/project_01/main/SoheilDocs/CurrencyPlot.png)
